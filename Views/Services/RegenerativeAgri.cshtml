@@ -1,0 +1,144 @@
+﻿
+@{
+    ViewBag.Title = "RegenerativeAgri";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container mt-5">
+    <div class="content-container p-4 bg-white shadow rounded">
+        <h1 class="text-center text-success display-4">Innovating Feed Production & Cultivation</h1>
+
+        <p class="text-center lead text-muted">
+            Exploring new technology to improve cultivation processes and enhance feed production with mechanized farming to increase
+            yield and efficiency.
+        </p>
+
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="info-box shadow-sm p-3">
+                    <h5 class="text-dark-orange">Silage & Grazed Feeds</h5>
+                    <p>Efficient preservation and feeding of Lucerne, green oats, wheat grass, and corn.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info-box shadow-sm p-3">
+                    <h5 class="text-dark-orange">Mechanized Farming</h5>
+                    <p>Innovations in green-chop processing and mechanized harvesting increase tonnage yield.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info-box shadow-sm p-3">
+                    <h5 class="text-dark-orange">Feed Packaging</h5>
+                    <p>Feed production in big packs, small bales, and pelleted forms for optimized storage.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="feedProductionCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#feedProductionCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#feedProductionCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#feedProductionCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#feedProductionCarousel" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#feedProductionCarousel" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#feedProductionCarousel" data-bs-slide-to="5"></button>
+            <button type="button" data-bs-target="#feedProductionCarousel" data-bs-slide-to="6"></button>
+            <button type="button" data-bs-target="#feedProductionCarousel" data-bs-slide-to="7"></button>
+            <button type="button" data-bs-target="#feedProductionCarousel" data-bs-slide-to="8"></button>
+            <button type="button" data-bs-target="#feedProductionCarousel" data-bs-slide-to="9"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/Content/Images/Picture32.png" class="d-block w-100" alt="Mechanized Farming">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Images/Picture31.png" class="d-block w-100" alt="Wheat Field">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Images/Picture30.png" class="d-block w-100" alt="Feed Production">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Images/Picture32.png" class="d-block w-100" alt="Silage Feeding">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Images/Picture32.png" class="d-block w-100" alt="Hay Baling">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Images/Picture32.png" class="d-block w-100" alt="Lucerne Growth">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Images/Picture32.png" class="d-block w-100" alt="Corn Feed Production">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Images/Picture32.png" class="d-block w-100" alt="Pelletized Feed Production">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Images/Picture32.png" class="d-block w-100" alt="Peanut Hay">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Images/Picture32.png" class="d-block w-100" alt="Green Cover Crops">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#feedProductionCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#feedProductionCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('#feedProductionCarousel').carousel();
+        });
+    </script>
+}
+
+<style>
+    .content-container {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-box {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+    }
+
+    .carousel-item img {
+        height: 400px;
+        object-fit: cover;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    h5 {
+        color: #b85012; /* Darker orange */
+    }
+
+    .lead {
+        font-size: 1.2rem;
+    }
+
+    hr {
+        border-top: 2px solid #198754;
+    }
+</style>
+
+<br/>
+
+

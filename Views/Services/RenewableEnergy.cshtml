@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "RenewableEnergy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="content-container p-4 bg-white shadow rounded">
+        <h1 class="text-center text-success">Renewable Energy in Agriculture</h1>
+
+        <p>
+            Using renewable energy will assist agricultural operations by powering water pumps and irrigation systems.
+            These energy sources are naturally replenished and have a low environmental impact. Renewable energy contributes
+            significantly to environmental sustainability, offering various benefits such as:
+        </p>
+
+        <ul class="custom-list">
+            <li>✅ Reduced emissions</li>
+            <li>✅ Improved air quality</li>
+            <li>✅ Sustainable development</li>
+            <li>✅ Power reliability</li>
+        </ul>
+
+        <p>
+            South Africa is actively investing in renewable energy, benefiting from abundant wind in coastal areas and sunshine
+            in the western regions. Our goal is to contribute to renewable electricity within the agricultural sector, positively
+            impacting the environment.
+        </p>
+
+        <p>
+            Recent government announcements have also allowed small-scale embedded generation, enabling industry players to generate
+            electricity for their own consumption. This marks a significant step forward in achieving energy security and sustainability.
+        </p>
+    </div>
+
+    <div id="energyCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#energyCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#energyCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#energyCarousel" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/Content/Images/Picture6.jpg" class="d-block w-100" alt="Solar and Wind Energy">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Images/Picture5.jpg" class="d-block w-100" alt="Solar Panels in Agriculture">
+            </div>
+            
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#energyCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#energyCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('#energyCarousel').carousel();
+        });
+    </script>
+}
+
+<style>
+    .content-container {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .custom-list {
+        list-style: none;
+        padding: 0;
+    }
+
+        .custom-list li {
+            font-size: 1.1em;
+            color: #0275d8;
+            padding: 5px 0;
+        }
+
+    .carousel-item img {
+        height: 400px;
+        object-fit: cover;
+    }
+</style>
+
+<br/>
+<br />
+

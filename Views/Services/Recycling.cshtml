@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "Recycling";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="content-container p-4 bg-white shadow rounded">
+        <h1 class="text-center text-success">Recycling</h1>
+
+        <p>
+            Within our own entity, we can assist with recycling directly in our own operations, ensuring we do our part.
+            Recycling solutions contribute to an improved environment and climate, providing a positive outcome for the future.
+        </p>
+
+        <p>
+            The recycling market in South Africa is growing into a sector with large potential. There is an increasing demand
+            for high-quality secondary raw materials consisting of recycled plastics, paper, and glass.
+        </p>
+
+        <p>
+            Recycling and reuse have a significant positive impact on the environment, including:
+        </p>
+
+        <ul class="custom-list">
+            <li>✅ Reducing waste</li>
+            <li>✅ Conserving resources</li>
+            <li>✅ Protecting ecosystems</li>
+            <li>✅ Reducing pollution</li>
+        </ul>
+
+        <p>
+            This project is also intended to optimize local capacity and facilities while contributing to long-term economic stability.
+            Several potential sectors demonstrate that recycling is both socially and financially feasible.
+        </p>
+    </div>
+
+    <div id="recyclingCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#recyclingCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#recyclingCarousel" data-bs-slide-to="1"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/Content/Images/Picture7.png" class="d-block w-100" alt="Recycling Bins">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Images/Picture8.png" class="d-block w-100" alt="Plastic Recycling">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#recyclingCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#recyclingCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('#recyclingCarousel').carousel();
+        });
+    </script>
+}
+
+<style>
+    .content-container {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .custom-list {
+        list-style: none;
+        padding: 0;
+    }
+
+        .custom-list li {
+            font-size: 1.1em;
+            color: #0275d8;
+            padding: 5px 0;
+        }
+
+    .carousel-item img {
+        height: 400px;
+        object-fit: cover;
+    }
+</style>
+
+<br/> 

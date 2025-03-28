@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crop Revenue & Profit Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .col-md-6 {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            background: #ddd;
+            border-radius: 5px;
+            outline: none;
+            opacity: 0.9;
+            transition: opacity .15s ease-in-out;
+        }
+
+            input[type=range]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 20px;
+                height: 20px;
+                background: orange;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+
+        .result-container {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+            .result-table thead {
+                background-color: #2c3e50;
+                color: white;
+            }
+
+            .result-table th, .result-table td {
+                border: 1px solid #ddd;
+                padding: 12px;
+                text-align: left;
+            }
+
+            .result-table th {
+                font-weight: bold;
+            }
+
+            .result-table tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+        .btn-dark-green {
+            background-color: #006400;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-dark-green:hover {
+                background-color: #004d00;
+            }
+
+        .result-label {
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .crop-comparison {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+            .crop-comparison th, .crop-comparison td {
+                border: 1px solid #ddd;
+                padding: 10px;
+                text-align: left;
+            }
+
+            .crop-comparison thead {
+                background-color: #3498db;
+                color: white;
+            }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-6">
+            <form id="calculatorForm">
+                <div class="form-group">
+                    <label>Select Crop:</label>
+                    <select id="cropSelect" class="form-control">
+                        <option value="Lettuce">Lettuce</option>
+                        <option value="Herbs">Herbs</option>
+                        <option value="Spinach">Spinach</option>
+                        <option value="Microgreens">Microgreens</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Sales Price per KG (ZAR):</label>
+                    <input type="range" id="salesPrice" min="0" max="50" step="0.1" value="0" oninput="updateValue('salesPriceVal', this.value)" />
+                    <span class="result-label" id="salesPriceVal">0</span> ZAR
+                </div>
+
+                <div class="form-group">
+                    <label>Total KG Sold:</label>
+                    <input type="range" id="kgSold" min="0" max="5000" step="1" value="0" oninput="updateValue('kgSoldVal', this.value)" />
+                    <span class="result-label" id="kgSoldVal">0</span> kg
+                </div>
+
+                <div class="form-group">
+                    <label>Floor Area (sq.m):</label>
+                    <input type="range" id="floorArea" min="0" max="1000" step="1" value="0" oninput="updateValue('floorAreaVal', this.value)" />
+                    <span class="result-label" id="floorAreaVal">0</span> sq.m
+                </div>
+
+                <div class="form-group">
+                    <label>Electricity Cost (ZAR):</label>
+                    <input type="range" id="electricity" min="0" max="15000" step="10" value="0" oninput="updateValue('electricityVal', this.value)" />
+                    <span class="result-label" id="electricityVal">0</span> ZAR
+                </div>
+
+                <div class="form-group">
+                    <label>Labour Cost (ZAR):</label>
+                    <input type="range" id="labour" min="0" max="30000" step="10" value="0" oninput="updateValue('labourVal', this.value)" />
+                    <span class="result-label" id="labourVal">0</span> ZAR
+                </div>
+
+                <div class="form-group">
+                    <label>Investment Percentage:</label>
+                    <input type="range" id="investmentPercentage" min="5" max="25" step="1" value="5" oninput="updateValue('investmentPercentageVal', this.value)" />
+                    <span class="result-label" id="investmentPercentageVal">5</span>%
+                </div>
+
+                <br />
+                <button type="button" class="btn-dark-green" onclick="calculateRevenue()">Calculate & Compare</button>
+            </form>
+        </div>
+
+        <div class="col-md-6 result-container">
+            <div>
+                <table class="result-table">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Current Crop Calculations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Crop</strong></td>
+                            <td id="currentCrop">-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Revenue</strong></td>
+                            <td>ZAR <span id="revenueResult">0</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Profit</strong></td>
+                            <td>ZAR <span id="profitResult">0</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Revenue per sqm</strong></td>
+                            <td>ZAR <span id="revenuePerSqm">0</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Profit per KG Sold</strong></td>
+                            <td>ZAR <span id="profitPerKg">0</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Investment Amount</strong></td>
+                            <td>ZAR <span id="investmentAmount">0</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table id="cropComparisonTable" class="crop-comparison">
+                    <thead>
+                        <tr>
+                            <th>Crop</th>
+                            <th>Revenue</th>
+                            <th>Profit</th>
+                            <th>Revenue/sqm</th>
+                            <th>Profit/KG</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comparisonTableBody">
+                        <!-- Comparison data will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Store crop calculations
+        const cropCalculations = {};
+
+        function updateValue(id, value) {
+            document.getElementById(id).innerText = value;
+        }
+
+        function calculateRevenue() {
+            let cropSelect = document.getElementById("cropSelect");
+            let currentCrop = cropSelect.value;
+            let price = parseFloat(document.getElementById("salesPrice").value);
+            let kgSold = parseFloat(document.getElementById("kgSold").value);
+            let electricity = parseFloat(document.getElementById("electricity").value);
+            let labour = parseFloat(document.getElementById("labour").value);
+            let floorArea = parseFloat(document.getElementById("floorArea").value);
+            let investmentPercentage = parseFloat(document.getElementById("investmentPercentage").value);
+
+            let revenue = price * kgSold;
+            let expenses = electricity + labour;
+            let profit = revenue - expenses;
+            let revenuePerSqm = floorArea > 0 ? (revenue / floorArea).toFixed(2) : 0;
+            let profitPerKg = kgSold > 0 ? (profit / kgSold).toFixed(2) : 0;
+            let investmentAmount = (profit * (investmentPercentage / 100)).toFixed(2);
+
+            // Update current crop results
+            document.getElementById("currentCrop").innerText = currentCrop;
+            document.getElementById("revenueResult").innerText = revenue.toFixed(2);
+            document.getElementById("profitResult").innerText = profit.toFixed(2);
+            document.getElementById("revenuePerSqm").innerText = revenuePerSqm;
+            document.getElementById("profitPerKg").innerText = profitPerKg;
+            document.getElementById("investmentAmount").innerText = investmentAmount;
+
+            // Store current crop calculations
+            cropCalculations[currentCrop] = {
+                revenue: revenue.toFixed(2),
+                profit: profit.toFixed(2),
+                revenuePerSqm: revenuePerSqm,
+                profitPerKg: profitPerKg
+            };
+
+            // Update comparison table
+            updateComparisonTable();
+        }
+
+        function updateComparisonTable() {
+            const comparisonTableBody = document.getElementById("comparisonTableBody");
+            comparisonTableBody.innerHTML = ""; // Clear existing rows
+
+            // Add rows for each stored crop calculation
+            for (let crop in cropCalculations) {
+                let rowData = cropCalculations[crop];
+                let row = comparisonTableBody.insertRow();
+
+                row.insertCell(0).textContent = crop;
+                row.insertCell(1).textContent = `ZAR ${rowData.revenue}`;
+                row.insertCell(2).textContent = `ZAR ${rowData.profit}`;
+                row.insertCell(3).textContent = `ZAR ${rowData.revenuePerSqm}`;
+                row.insertCell(4).textContent = `ZAR ${rowData.profitPerKg}`;
+            }
+        }
+    </script>
+</body>
+
+
+
+</html>
+
+<br />
+
+
+

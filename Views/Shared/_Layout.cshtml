@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="~/Content/Images/Picture1 -aeb logo.png" />
+    <title>@ViewBag.Title </title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="bg-white">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-sm navbar-white bg-white">
+        <div class="container-fluid">
+            <!-- Logo/Image - remove extra padding by moving outside inner container -->
+            <a class="navbar-brand ms-2" href="/">
+                <img src="~/Content/Images/Picture1 -aeb logo.png" alt="Logo" class="navbar-logo" />
+                African Equity Brokers
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav nav-spacing">
+                    <li class="nav-item">
+                        @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <!-- Our Services Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown">Our Services</a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Renewable Energy", "RenewableEnergy", "Services", new { area = "" }, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Recycling", "Recycling", "Services", new { area = "" }, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Agriculture Technologies", "AgriTechnologies", "Services", new { area = "" }, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Agro Processing", "AgroProcessing", "Services", new { area = "" }, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Regenerative Agriculture", "RegenerativeAgri", "Services", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Contact Us", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Calculate ROI", "ProfitCalculator", "Home", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <footer class="footer">
+        <div class="container text-center py-4">
+            <p class="footer-text">
+                Contact Us: <a href="mailto:info@africanequitybrokers.com" class="footer-link">info@africanequitybrokers.com</a> |
+                Phone: <a href="tel:+123456789" class="footer-link">+1 234 567 89</a>
+            </p>
+            <p class="footer-text">&copy; 2025 African Equity Brokers. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <!-- jQuery Dropdown Script -->
+    <script>
+        $(document).ready(function () {
+            // Toggle the dropdown menu on click
+            $("#servicesDropdown").click(function (e) {
+                e.preventDefault();
+                $(this).next(".dropdown-menu").toggle();
+            });
+
+            // Close the dropdown when clicking outside of it
+            $(document).click(function (e) {
+                if (!$(e.target).closest('.dropdown').length) {
+                    $(".dropdown-menu").hide();
+                }
+            });
+        });
+    </script>
+
+    <style>
+        /* Custom dropdown menu styles */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .dropdown-item {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            display:flex;
+        }
+
+            .dropdown-item:hover {
+                background-color: #f8f9fa;
+            }
+    </style>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,145 @@
+﻿
+@{
+    ViewBag.Title = "AgroProcessing";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <div class="container mt-5">
+        <div class="content-container p-4 bg-white shadow rounded">
+            <h1 class="text-center text-success">Agriculture Growth</h1>
+
+            <p class="lead text-center">
+                The agricultural sector has one of the largest growth potentials in the economy. Significant food and raw
+                materials are exported, and demand is continually growing for high-quality produce, yielding high-growth production.
+            </p>
+
+            <p>
+                Opportunities to strengthen the South African agricultural and food production sector continue to expand.
+                The critical need to double global food production by the year 2050 has been forcing change in every aspect
+                of agribusiness, and all indications are that this change will be accelerating. Improving health in farming
+                by restoring soil and biodiversity, while reducing the use of synthetic inputs, is essential for long-term sustainability.
+            </p>
+
+            <hr class="my-4">
+
+            <h3 class="text-success">Key Agricultural Enhancements</h3>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="text-dark-orange">Soil Health</h5>
+                    <p>
+                        Agricultural practices such as cover crops, composting, and reduced tillage improve soil health
+                        and increase biodiversity, leading to better plant and animal health and a more resilient agricultural system.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-dark-orange">Organic Products</h5>
+                    <p>
+                        There is a growing market demand for organic products, driven by the culture of regenerative
+                        agriculture, which focuses on restoring natural soil nutrients and reducing harmful inputs.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-dark-orange">Better Input Use</h5>
+                    <p>
+                        Reducing the use of synthetic fertilizers, pesticides, and excessive irrigation not only
+                        minimizes environmental impact but also improves long-term sustainability in agricultural production.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="agriGrowthCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#agriGrowthCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#agriGrowthCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#agriGrowthCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#agriGrowthCarousel" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#agriGrowthCarousel" data-bs-slide-to="4"></button>
+                <button type="button" data-bs-target="#agriGrowthCarousel" data-bs-slide-to="5"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="~/Content/Images/Picture16.png" class="d-block w-100" alt="Agricultural Growth">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/Images/Picture17.png" class="d-block w-100" alt="High-Yield Crop Production">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/Images/Picture18.png" class="d-block w-100" alt="Cover Crops for Soil Health">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/Images/Picture19.png" class="d-block w-100" alt="Organic Crop Growth">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/Images/Picture20.png" class="d-block w-100" alt="Regenerative Farming">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/Images/Picture21.png" class="d-block w-100" alt="Sustainable Agriculture">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#agriGrowthCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#agriGrowthCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+
+    @section scripts {
+        <script>
+        $(document).ready(function () {
+            $('#agriGrowthCarousel').carousel();
+        });
+        </script>
+    }
+
+    <style>
+        .content-container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-list {
+            list-style: none;
+            padding: 0;
+        }
+
+            .custom-list li {
+                font-size: 1.1em;
+                color: #0275d8;
+                padding: 5px 0;
+            }
+
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .row {
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            margin-top: 20px;
+            color: #198754; /* Bootstrap success green */
+        }
+
+        h5 {
+            color: #b85012; /* Darker orange */
+        }
+
+        hr {
+            border-top: 2px solid #198754;
+        }
+    </style>
+
+<br/>
+

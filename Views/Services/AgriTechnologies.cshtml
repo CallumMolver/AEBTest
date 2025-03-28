@@ -1,0 +1,155 @@
+﻿
+@{
+    ViewBag.Title = "AgriTechnologies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container mt-5">
+    <div class="content-container p-4 bg-white shadow rounded">
+        <h1 class="text-center text-success">Agri Technologies</h1>
+
+        <p class="lead text-center">
+            Using agricultural technologies, we improve efficiency, yield, and profitability in our agriculture projects.
+            Technologies at our disposal include Precision Farming, Drones, Sensors, GPS, and Data Analytics.
+        </p>
+
+        <p>
+            Smart agriculture technologies play a crucial role in optimizing productivity, improving transportation, and globalizing
+            production and markets. Consumer choices that resonate all the way up the food chain also influence the need for more capital
+            and evolving business models throughout agribusiness. The integration of advanced technologies enhances resource management,
+            improves sustainability, and ensures food security. Innovations in data analytics, remote sensing, and automation empower
+            farmers to make informed decisions, reduce costs, and maximize yields.
+        </p>
+
+        <hr class="my-4">
+
+        <h3 class="text-success">Key Technologies in Agriculture</h3>
+
+        <div class="row">
+            <div class="col-md-4">
+                <h5 class="text-dark-orange">Precision Farming</h5>
+                <p>
+                    Uses a combination of techniques to automate farming operations, such as GPS, drones, satellites,
+                    sensors, and robotics. Precision farming increases yields, reduces costs, and optimizes resource use.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h5 class="text-dark-orange">Drones</h5>
+                <p>
+                    Drones help monitor crops, irrigation equipment, pesticide applications, and fertilizer distribution,
+                    ensuring optimal plant health and growth.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h5 class="text-dark-orange">Quality Machinery</h5>
+                <p>
+                    Using the latest agricultural machinery technology enhances production efficiency, ensuring
+                    feasibility and sustainability in farming operations.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="agriTechCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#agriTechCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#agriTechCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#agriTechCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#agriTechCarousel" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#agriTechCarousel" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#agriTechCarousel" data-bs-slide-to="5"></button>
+            <button type="button" data-bs-target="#agriTechCarousel" data-bs-slide-to="6"></button>
+            <button type="button" data-bs-target="#agriTechCarousel" data-bs-slide-to="7"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/Content/Images/Picture10.png" class="d-block w-100" alt="Precision Farming">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Images/Picture11.png" class="d-block w-100" alt="Smart Farming Technology">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Images/Picture12.png" class="d-block w-100" alt="Drones in Agriculture">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Images/Picture13.png" class="d-block w-100" alt="Agricultural Drone">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Images/Picture14.png" class="d-block w-100" alt="Smart Sensors in Farming">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Images/Picture15.png" class="d-block w-100" alt="Satellite Monitoring in Agriculture">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Images/Picture16.png" class="d-block w-100" alt="Advanced Agricultural Machinery">
+            </div>
+            <div class="carousel-item">
+                <img src="" class="d-block w-100" alt="Automated Farming Technology">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#agriTechCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#agriTechCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('#agriTechCarousel').carousel();
+        });
+    </script>
+}
+
+<style>
+    .content-container {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .custom-list {
+        list-style: none;
+        padding: 0;
+    }
+
+        .custom-list li {
+            font-size: 1.1em;
+            color: #0275d8;
+            padding: 5px 0;
+        }
+
+    .carousel-item img {
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .row {
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        margin-top: 20px;
+        color: #198754; /* Bootstrap success green */
+    }
+
+    h5 {
+        color: #d35400; /* Darker orange */
+    }
+
+    hr {
+        border-top: 2px solid #198754;
+    }
+</style>
+
+<br/>
+<br />

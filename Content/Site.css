@@ -1,0 +1,178 @@
+﻿/* Ensure entire page background is white */
+html, body {
+    background-color: #fff !important;
+    color: #000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Logo */
+.navbar-logo {
+    height: 50px; /* Adjust logo size */
+    width: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Navbar Link Styles */
+.navbar-nav .nav-link {
+    color: black !important; /* Default link color */
+    transition: color 0.3s ease-in-out;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: orange !important; /* Hover color */
+        text-decoration: none;
+    }
+
+/* Button Styling */
+.btn-get-started {
+    display: inline-block;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 12px 25px; /* Button padding */
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 30px; /* Rounded edges */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    border: none;
+}
+
+    .btn-get-started:hover {
+        background-color: #333; /* Slightly lighter black on hover */
+        color: #ffa500; /* Orange text on hover */
+    }
+
+/* Center alignment for smaller screens */
+.text-center .btn-get-started {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Section Styling */
+.section-divider {
+    margin-bottom: 20px; /* Reduce space below horizontal line */
+    border-top: 2px solid #ccc;
+}
+
+/* About Us Section */
+#about-us-section {
+    margin-top: 40px; /* Adjust spacing */
+    padding: 20px 0;
+}
+
+    #about-us-section h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #333;
+    }
+
+    #about-us-section p {
+        font-size: 1.2rem;
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+
+    /* Styling for images inside the About Us section */
+    #about-us-section img {
+        display: block;
+        margin: 20px auto; /* Centers images */
+        max-width: 100%; /* Ensures responsiveness */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 15px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+/* General Rounded Image Styling */
+.rounded-image {
+    width: 100%; /* Responsive width */
+    max-width: 500px; /* Limit max size */
+    height: auto;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+/* Paragraph styling */
+p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #000 !important; /* Black background */
+    color: #fff !important; /* White text */
+    padding: 20px 0;
+    text-align: center;
+}
+
+    .footer .footer-text {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #fff !important;
+    }
+
+    .footer .footer-link {
+        color: #ffa500; /* Orange link color */
+        text-decoration: none;
+    }
+
+        .footer .footer-link:hover {
+            color: #fff !important;
+            text-decoration: underline;
+        }
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .footer-text {
+        font-size: 0.9rem;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .btn-get-started {
+        width: 100%; /* Make button full-width on small screens */
+    }
+
+    #about-us-section img {
+        max-width: 90%; /* Reduce image width on smaller screens */
+    }
+}
+
+.navbar-nav .dropdown-menu {
+    margin-top: 0;
+    border-radius: 0;
+    border: none;
+}
+
+.navbar-nav .dropdown-item {
+    padding: 10px 20px;
+    color: #333;
+}
+
+    .navbar-nav .dropdown-item:hover {
+        background-color: #f8f9fa;
+    }
+
+a:hover {
+    color: darkorange;
+}
+
+.navbar-nav .nav-link:hover {
+    color: orange !important; /* Hover color */
+    text-decoration: none;
+}
